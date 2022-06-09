@@ -1,0 +1,98 @@
+We noticed that array be it char array or simple array if we pass it through a function it is always call by refernce in which its 
+first letter acts as the head pointer pointing to the array but still it can be accessed as an array once it is present in the fuction
+Below is an example
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+struct stack{
+    int top;
+    int size;
+    int *s;
+};
+
+int isbalanced(char c[])
+{
+int i;
+printf("\n");
+while(i!=strlen(c))
+{
+    printf("%c",c[i]);
+    i++;
+    if(c[i]=='a')
+    {
+        c[i]='z';
+    }
+}
+}
+
+void main()
+{
+    char c[]="Hello how are you doing Im fine thank you";
+    int i=0;
+    while(i!=strlen(c))
+    {
+        printf("%c",c[i]);
+        i++;
+    }
+    isbalanced(c);
+    printf("\n");
+    i=0;
+    while (i != strlen(c))
+    {
+
+        printf("%c", c[i]);
+        i++;
+    }
+}
+
+Another concept down there
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node{
+    int data;
+    struct node *next;
+}*top=NULL;
+
+void push(int data)
+{
+ 
+     struct node *t = (struct node *)malloc(sizeof(struct node));
+     if(t==NULL)
+     return;
+     t->data = data;
+     t->next = top;
+     top = t;
+ 
+}
+
+void display(struct node *top)
+{
+
+    while(top!=NULL)
+    {
+        printf(" %d ",top->data);
+       top= top->next;
+    }
+}
+
+void pop()
+{
+    printf("\nPop(): %d",top->data);
+    top=top->next;
+}
+
+void main()
+{
+    push(1);
+    push(2);
+    push(3);
+    push(4);
+    push(5);
+    display(top);  // Good thing to notice if there is a global variable passed as a local variable by call by value then there be no changes
+                    //in global variable both of them will be different variables
+    pop();
+    pop();
+    pop();
+}

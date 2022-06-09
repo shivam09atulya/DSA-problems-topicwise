@@ -1,0 +1,5 @@
+
+
+1. inorder traversal through recurssion .
+    Revise inorder traversal recurssion  from aditya verma youtube and then try it out again
+    Do this for every traversal .

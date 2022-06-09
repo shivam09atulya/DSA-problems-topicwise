@@ -1,0 +1,1 @@
+{"name":"Local: chef_and_spells","url":"d:\\VS\\codechef\\july lunchtime\\chef_and_spells.cpp","tests":[{"id":1627735220354,"input":"2\n4 2 8\n10 14 18","output":"12\n32"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\VS\\codechef\\july lunchtime\\chef_and_spells.cpp","group":"local","local":true}
